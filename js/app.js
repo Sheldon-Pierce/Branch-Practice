@@ -82,7 +82,7 @@ function sumArray(sumArr) { //eslint-disable-line
   let numfirst2 = first2[0];
   let total = sum(numfirst2, c);
   let numTotal = total[0];
-  
+
   return [numTotal, `${a},${b},${c} was passed in as an array of numbers, and ${numTotal} is their sum.`];
 
 }
@@ -105,11 +105,18 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiplyArray(multArr) { //eslint-disable-line
-
+  let a = multArr[0];
+  let b = multArr[1];
+  let c = multArr[2];
+  let first2 = multiply(a,b);
+  let numfirst2 = first2[0];
+  let total = multiply(numfirst2, c);
+  let numTotal = total[0];
+  return [numTotal, `The numbers ${a},${b},${c} have a product of ${numTotal}.`];
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyArray(testArray);
+testMultiplyArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop.
 
