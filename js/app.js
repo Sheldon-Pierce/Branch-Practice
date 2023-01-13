@@ -9,8 +9,6 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sum(a, b) { //eslint-disable-line
-  let num1 = a;
-  let num2 = b;
   let sumNums = a + b;
   return [sumNums, `The sum of ${a} and ${b} is ${sumNums}.`];
 }
@@ -30,10 +28,8 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiply(a, b) { //eslint-disable-line
-  let num1 = a;
-  let num2 = b;
   let multNum = a * b;
-  return [multNum, `The product of ${num1} and ${num2} is ${multNum}.`];
+  return [multNum, `The product of ${a} and ${b} is ${multNum}.`];
 
 }
 
@@ -79,12 +75,21 @@ Test this function by hand in the console to get it working, and when you think 
 let testArray = [2, 3, 4]; //eslint-disable-line
 
 function sumArray(sumArr) { //eslint-disable-line
+  let a = sumArr[0];
+  let b = sumArr[1];
+  let c = sumArr[2];
+  let first2 = sum(a,b);
+  let numfirst2 = first2[0];
+  let total = sum(numfirst2, c);
+  let numTotal = total[0];
+  
+  return [numTotal, `${a},${b},${c} was passed in as an array of numbers, and ${numTotal} is their sum.`];
 
 }
 
 // Here is the test for sumArray(); uncomment it to run it
 
-// testSumArray(testArray);
+testSumArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
