@@ -51,9 +51,16 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a, b, c) { //eslint-disable-line
-  let sums = a + b + c;
-  let products = a * b * c;
-  return [sums, products, `${a} and ${b} and ${c} sum to ${sums}.`, `The product of ${a} and ${b} and ${c} is ${products}.`];
+  let sums = sum(a, b);
+  let sums1 = sums[0];
+  let sums2 = sum(sums1, c);
+  let sums2Num = sums2[0];
+  let mult = multiply(a, b);
+  let mult1 = mult[0];
+  let mult2 = multiply(mult1, c);
+  let mult22Num = mult2[0];
+
+  return [sums2Num, mult22Num, `${a} and ${b} and ${c} sum to ${sums2Num}.`, `The product of ${a} and ${b} and ${c} is ${mult22Num}.`];
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
@@ -139,11 +146,27 @@ Test this function by hand in the console to get it working, and when you think 
 // Write your code here
 let testDynamicArray = [1,2,3,4,5]; //eslint-disable-line
 
-function multiplyAnyArray(dynamicArray) { //eslint-disable-line
+// function multiplyAnyArray(dynamicArray) { //eslint-disable-line
+//   let lengthArr = dynamicArray.length;
+//   let c = multiply(dynamicArray[0],dynamicArray[1])[0];
+//   for (let i = 2; i < lengthArr; i++){
+//     let num = multiply(c, dynamicArray[i])[0];
+//     c = num;
+//   }
+//   return [c, `The numbers ${dynamicArray} have a product of ${c}.`];
+// }
 
+function multiplyAnyArray(dynamicArray) { //eslint-disable-line
+  let lengthArr = dynamicArray.length;
+  let c = 1;
+  for (let i = 0; i < lengthArr; i++){
+    let num = multiply(c, dynamicArray[i])[0];
+    c = num;
+  }
+  return [c, `The numbers ${dynamicArray} have a product of ${c}.`];
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyAnyArray(testDynamicArray);
+testMultiplyAnyArray(testDynamicArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. You're done! Submit the link to the repo following the instructions in Canvas.
